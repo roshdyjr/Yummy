@@ -28,11 +28,11 @@ async function getMealDetails(id) {
   let meal = mealRes.meals[0];
 
   $("#rowData").html(`
-      <div class="col-md-4">
+      <div class="col-md-4 ps-xs">
           <img class="w-100 rounded-3" src="${meal.strMealThumb}" alt="${meal.strMeal}">
           <h2>${meal.strMeal}</h2>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 ps-xs">
           <h2>Instructions</h2>
           <p>${meal.strInstructions}</p>
           <h3><span class="fw-bolder">Area : </span>${meal.strArea}</h3>
@@ -215,7 +215,7 @@ function displayFilteredMeals(meals) {
   meals.forEach((meal) => {
     $("#rowData").append(`
       <div class="col-md-3">
-        <div class="meal position-relative rounded-2 cursor-pointer overflow-hidden" data-meal-id="${meal.idMeal}">
+        <div class="ps-xs meal position-relative rounded-2 cursor-pointer overflow-hidden" data-meal-id="${meal.idMeal}">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="w-100">
           <div class="meal-layer position-absolute d-flex justify-content-center align-items-center text-black p-2">
             <h3>${meal.strMeal}</h3>
@@ -250,7 +250,7 @@ $("#categoriesLnk").on("click", async function () {
       category.strCategoryDescription.split(" ").slice(0, 20).join(" ") + "...";
     $("#rowData").append(`
       <div class="col-md-3">
-        <div class="meal position-relative rounded-2 cursor-pointer overflow-hidden" data-category="${category.strCategory}">
+        <div class="ps-xs meal position-relative rounded-2 cursor-pointer overflow-hidden" data-category="${category.strCategory}">
           <img src="${category.strCategoryThumb}" alt="${category.strCategory}" class="w-100">
           <div class="meal-layer position-absolute text-center text-black p-2">
             <h3>${category.strCategory}</h3>
@@ -350,7 +350,7 @@ $("#ingredientsLnk").on("click", async function () {
       : "No description available";
     $("#rowData").append(`
         <div class="col-md-3">
-          <div class="ingredient rounded-2 cursor-pointer text-center" data-ingredient="${ingredient.strIngredient}">
+          <div class="ps-xs ingredient rounded-2 cursor-pointer text-center" data-ingredient="${ingredient.strIngredient}">
             <i class="fa-solid fa-drumstick-bite fa-4x"></i>
             <h3>${ingredient.strIngredient}</h3>
             <p>${description}</p>

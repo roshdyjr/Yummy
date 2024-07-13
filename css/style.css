@@ -71,3 +71,12 @@ p {
 ::placeholder {
   color: #6c757d !important;
 }
+
+
+/* custom media */
+
+@media (max-width: 675px) {
+  .ps-xs {
+      padding-left: 5rem !important;
+  }
+}
